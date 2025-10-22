@@ -1,163 +1,130 @@
 "use client"
 
-import { Phone, Mail, MapPin, Clock, Star } from 'lucide-react'
+import Link from 'next/link'
+import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin } from 'lucide-react'
 import Logo from './Logo'
 
 export default function Footer() {
-  return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div className="lg:col-span-1">
-            <div className="mb-6">
-              <Logo />
-            </div>
-            <p className="text-gray-300 mb-6">
-              Professional paper shredding services in Bournemouth and surrounding areas. 
-              Secure, reliable, and BS EN 15713 compliant document destruction.
-            </p>
-            
-            {/* Rating */}
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex text-yellow-400">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-current" />
-                ))}
-              </div>
-              <span className="text-gray-300 text-sm">4.9/5 Customer Rating</span>
-            </div>
-          </div>
+  const socialLinks = {
+    facebook: "https://www.facebook.com/crosscutshredding",
+    twitter: "https://twitter.com/crosscutshred",
+    linkedin: "https://www.linkedin.com/company/cross-cut-shredding-ltd"
+  }
 
-          {/* Services */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Our Services</h3>
-            <ul className="space-y-3">
-              <li>
-                <a href="https://crosscutshredding.co.uk/services/domestic-shredding" className="text-gray-300 hover:text-white transition-colors">
-                  Home Shredding
-                </a>
-              </li>
-              <li>
-                <a href="https://crosscutshredding.co.uk/services/business-shredding" className="text-gray-300 hover:text-white transition-colors">
-                  Business Collection
-                </a>
-              </li>
-              <li>
-                <a href="https://crosscutshredding.co.uk/services/business-shredding/regular-shredding" className="text-gray-300 hover:text-white transition-colors">
-                  Regular Service
-                </a>
-              </li>
-              <li>
-                <a href="https://crosscutshredding.co.uk/services/document-scanning" className="text-gray-300 hover:text-white transition-colors">
-                  Document Scanning
-                </a>
-              </li>
-              <li>
-                <a href="https://crosscutshredding.co.uk/services/secure-document-storage" className="text-gray-300 hover:text-white transition-colors">
-                  Secure Storage
-                </a>
-              </li>
-            </ul>
+  return (
+    <footer className="bg-gray-50 border-t border-gray-100">
+      {/* Main Footer Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+          {/* Company Info */}
+          <div className="space-y-4">
+            <Logo />
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Professional document destruction services you can trust. BS EN 15713 compliant, ensuring your confidential information is securely destroyed.
+            </p>
+            <div className="flex gap-4">
+              <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-600 transition-colors" aria-label="Facebook">
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-600 transition-colors" aria-label="Twitter">
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-600 transition-colors" aria-label="LinkedIn">
+                <Linkedin className="w-5 h-5" />
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
-            <ul className="space-y-3">
+          <div className="space-y-4">
+            <h3 className="font-semibold text-gray-900">Quick Links</h3>
+            <ul className="space-y-2">
               <li>
-                <a href="https://crosscutshredding.co.uk/pricing" className="text-gray-300 hover:text-white transition-colors">
-                  Pricing
-                </a>
-              </li>
-              <li>
-                <a href="https://crosscutshredding.co.uk/locations" className="text-gray-300 hover:text-white transition-colors">
-                  Areas Served
-                </a>
-              </li>
-              <li>
-                <a href="https://crosscutshredding.co.uk/about" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/about" className="text-gray-600 hover:text-green-600 transition-colors">
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="https://crosscutshredding.co.uk/contact" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/areas-served" className="text-gray-600 hover:text-green-600 transition-colors">
+                  Areas Served
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-gray-600 hover:text-green-600 transition-colors">
                   Contact
+                </Link>
+              </li>
+              <li>
+                <a href="https://crosscutshredding.co.uk/services" className="text-gray-600 hover:text-green-600 transition-colors">
+                  Our Services
                 </a>
               </li>
               <li>
-                <a href="https://crosscutshredding.co.uk/privacy-policy" className="text-gray-300 hover:text-white transition-colors">
-                  Privacy Policy
+                <a href="https://crosscutshredding.co.uk/pricing" className="text-gray-600 hover:text-green-600 transition-colors">
+                  Pricing
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Contact Us</h3>
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-green-400 mt-0.5" />
-                <div>
-                  <a 
-                    href="tel:01935310616" 
-                    className="text-gray-300 hover:text-white transition-colors font-medium"
-                  >
-                    01935 310616
+          {/* Contact Info & Certifications */}
+          <div className="space-y-6">
+            {/* Contact Info */}
+            <div className="space-y-3">
+              <h3 className="font-semibold text-gray-900">Contact Us</h3>
+              <ul className="space-y-3">
+                <li>
+                  <a href="tel:01935310616" className="text-gray-600 hover:text-green-600 transition-colors flex items-center gap-2">
+                    <Phone className="w-4 h-4 flex-shrink-0" />
+                    <span>01935 310616</span>
                   </a>
-                  <p className="text-sm text-gray-400">Call for immediate assistance</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-green-400 mt-0.5" />
-                <div>
-                  <a 
-                    href="mailto:info@papershreddingbournemouth.co.uk" 
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    info@papershreddingbournemouth.co.uk
+                </li>
+                <li>
+                  <a href="mailto:info@crosscutshredding.co.uk" className="text-gray-600 hover:text-green-600 transition-colors flex items-center gap-2">
+                    <Mail className="w-4 h-4 flex-shrink-0" />
+                    <span>info@crosscutshredding.co.uk</span>
                   </a>
-                  <p className="text-sm text-gray-400">Email us anytime</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-green-400 mt-0.5" />
-                <div>
-                  <p className="text-gray-300">Serving Bournemouth</p>
-                  <p className="text-sm text-gray-400">and surrounding areas</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <Clock className="w-5 h-5 text-green-400 mt-0.5" />
-                <div>
-                  <p className="text-gray-300">Mon-Fri: 8AM-6PM</p>
-                  <p className="text-sm text-gray-400">Weekend collections available</p>
-                </div>
-              </div>
+                </li>
+                <li className="flex items-start gap-2">
+                  <MapPin className="w-4 h-4 text-gray-600 mt-1 flex-shrink-0" />
+                  <address className="text-gray-600 not-italic text-sm">
+                    Units 1-2, 15 Oxford Road<br />
+                    Pen Mill Trading Estate<br />
+                    Yeovil<br />
+                    BA21 5HR
+                  </address>
+                </li>
+              </ul>
             </div>
+
+            
           </div>
         </div>
+      </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div className="text-sm text-gray-400">
-              © {new Date().getFullYear()} Paper Shredding Bournemouth. All rights reserved.
+      {/* Bottom Bar */}
+      <div className="border-t border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <p className="text-sm text-gray-600 text-center md:text-left">
+                &copy; {new Date().getFullYear()} Cross Cut Shredding Ltd. All Rights Reserved.
+              </p>
+              <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+                <Link href="/legal/privacy-policy" className="text-sm text-gray-600 hover:text-green-600 transition-colors">
+                  Privacy Policy
+                </Link>
+                <Link href="/legal/terms" className="text-sm text-gray-600 hover:text-green-600 transition-colors">
+                  Terms & Conditions
+                </Link>
+              </div>
             </div>
-            <div className="flex gap-6 text-sm">
-              <a href="https://crosscutshredding.co.uk/terms-conditions" className="text-gray-400 hover:text-white transition-colors">
-                Terms & Conditions
-              </a>
-              <a href="https://crosscutshredding.co.uk/privacy-policy" className="text-gray-400 hover:text-white transition-colors">
-                Privacy Policy
-              </a>
-              <a href="https://crosscutshredding.co.uk/data-protection" className="text-gray-400 hover:text-white transition-colors">
-                Data Protection
-              </a>
+            <div className="text-xs text-gray-500 text-center md:text-left">
+              <span className="block sm:inline">Company Number: 09920755</span>
+              <span className="hidden sm:inline"> | </span>
+              <span className="block sm:inline">VAT: 239141808</span>
+              <span className="hidden sm:inline"> | </span>
+              <span className="block sm:inline">Waste Carrier: CBDU93711</span>
             </div>
           </div>
         </div>
