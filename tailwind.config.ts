@@ -41,6 +41,25 @@ export default {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
       },
+      keyframes: {
+        'gentle-float': {
+          '0%, 100%': { transform: 'translateY(0) rotate(-2deg)' },
+          '50%': { transform: 'translateY(-12px) rotate(2deg)' },
+        },
+        'gentle-pulse': {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.12)' },
+        },
+        'slide-in-left': {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0)' }
+        }
+      },
+      animation: {
+        'gentle-float': 'gentle-float 1.5s ease-in-out infinite',
+        'gentle-pulse': 'gentle-pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'slide-in-left': 'slide-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both'
+      }
     },
   },
   plugins: [],
