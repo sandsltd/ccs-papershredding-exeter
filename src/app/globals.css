@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  color-scheme: light !important;
+}
+
+/* Force light mode colors */
+html {
+  color: black;
+  background: white;
+}
+
+/* Ensure inputs always have black text */
+input, textarea, select {
+  color: black !important;
+  background-color: white !important;
+}
+
+/* Ensure placeholders are visible */
+::placeholder {
+  color: #6B7280 !important;
+}
