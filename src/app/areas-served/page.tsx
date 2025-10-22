@@ -111,10 +111,10 @@ export default function AreasServedPage() {
           <div className="mt-12 text-center">
             <div className="bg-blue-50 rounded-xl p-8 max-w-3xl mx-auto">
               <h3 className="text-xl font-bold text-gray-900 mb-4">
-                Don't see your area listed?
+                Don&apos;t see your area listed?
               </h3>
               <p className="text-gray-600 mb-6">
-                We're constantly expanding our service area. If your location isn't listed above, 
+                We&apos;re constantly expanding our service area. If your location isn&apos;t listed above, 
                 please get in touch as we may still be able to help you.
               </p>
               <a 
