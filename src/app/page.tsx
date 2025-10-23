@@ -689,6 +689,120 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Quick answers to common questions about our shredding services
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* FAQ 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+            >
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <CalendarDays className="w-6 h-6 text-green-600" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                    How quickly can you collect from my area?
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    We can usually arrange collection within <span className="font-semibold text-green-600">2-3 weeks</span> of your request. We provide a 3-hour time window so you know when we&apos;re coming. We cover Bournemouth, Poole, Christchurch and surrounding Dorset areas with flexible scheduling to suit your needs.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* FAQ 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+            >
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Building2 className="w-6 h-6 text-blue-600" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                    What services do you offer?
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    We offer <span className="font-semibold text-blue-600">three main services</span>: Home collection shredding, business shredding, and drop-in shredding at our Yeovil facility. We also provide document scanning and secure storage services.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* FAQ 3 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+            >
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Shield className="w-6 h-6 text-purple-600" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                    Are your services secure and compliant?
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    <span className="font-semibold text-purple-600">Yes, our services are fully secure and compliant.</span> We&apos;re BS EN 15713 compliant, our staff are DBS checked, and we provide certificates of destruction for all services.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* FAQ 4 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+            >
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <CheckCircle className="w-6 h-6 text-orange-600" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                    Do you provide proof of destruction?
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    <span className="font-semibold text-orange-600">Yes, we provide certificates of destruction for all services.</span> These are emailed within 24 hours of shredding and provide proof for your records that documents have been securely destroyed.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-green-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

@@ -96,6 +96,45 @@ export default function StructuredData() {
     }
   }
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How quickly can you collect from my area?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We can usually arrange collection within 2-3 weeks of your request. We provide a 3-hour time window so you know when we're coming. We cover Bournemouth, Poole, Christchurch and surrounding Dorset areas with flexible scheduling to suit your needs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What services do you offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We offer three main services: Home collection shredding, business shredding, and drop-in shredding at our Yeovil facility. We also provide document scanning and secure storage services."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are your services secure and compliant?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, our services are fully secure and compliant. We're BS EN 15713 compliant, our staff are DBS checked, and we provide certificates of destruction for all services."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide proof of destruction?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we provide certificates of destruction for all services. These are emailed within 24 hours of shredding and provide proof for your records that documents have been securely destroyed."
+        }
+      }
+    ]
+  }
+
   return (
     <>
       <script
@@ -114,6 +153,12 @@ export default function StructuredData() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(websiteSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema)
         }}
       />
     </>
