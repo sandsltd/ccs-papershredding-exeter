@@ -1,6 +1,66 @@
-import { Phone, Mail, MapPin, Clock } from 'lucide-react'
+"use client"
+
+import { useState } from 'react'
+import { Phone, Mail, MapPin, Clock, CheckCircle, AlertCircle } from 'lucide-react'
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    postcode: '',
+    service: '',
+    message: ''
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+    setErrorMessage('')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          postcode: '',
+          service: '',
+          message: ''
+        })
+      } else {
+        const errorData = await response.json()
+        setSubmitStatus('error')
+        setErrorMessage(errorData.error || 'Failed to send enquiry')
+      }
+    } catch (error) {
+      setSubmitStatus('error')
+      setErrorMessage('Network error. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -50,10 +110,10 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">Email</h3>
                     <a 
-                      href="mailto:info@papershreddingbournemouth.co.uk"
+                      href="mailto:info@crosscutshredding.co.uk"
                       className="text-green-600 hover:text-green-700 font-medium"
                     >
-                      info@papershreddingbournemouth.co.uk
+                      info@crosscutshredding.co.uk
                     </a>
                     <p className="text-gray-600 text-sm mt-1">Email us anytime for quotes</p>
                   </div>
@@ -79,9 +139,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">Opening Hours</h3>
                     <div className="text-gray-600">
-                      <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                      <p>Saturday: 9:00 AM - 4:00 PM</p>
-                      <p>Sunday: Closed</p>
+                      <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                      <p className="text-sm text-gray-500">(excluding bank holidays)</p>
                       <p className="text-sm mt-2 text-green-600">Emergency collections available</p>
                     </div>
                   </div>
@@ -93,7 +152,7 @@ export default function ContactPage() {
             <div className="bg-gray-50 rounded-2xl p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Request a Quote</h2>
               
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -103,6 +162,8 @@ export default function ContactPage() {
                       type="text"
                       id="name"
                       name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                       placeholder="Your full name"
@@ -117,8 +178,10 @@ export default function ContactPage() {
                       type="tel"
                       id="phone"
                       name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                      placeholder="01234 567890"
+                      placeholder="01202 123123"
                     />
                   </div>
                 </div>
@@ -131,6 +194,8 @@ export default function ContactPage() {
                     type="email"
                     id="email"
                     name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     placeholder="your.email@example.com"
@@ -145,6 +210,8 @@ export default function ContactPage() {
                     type="text"
                     id="postcode"
                     name="postcode"
+                    value={formData.postcode}
+                    onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     placeholder="BH1 1AA"
@@ -158,14 +225,18 @@ export default function ContactPage() {
                   <select
                     id="service"
                     name="service"
+                    value={formData.service}
+                    onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   >
                     <option value="">Select a service</option>
+                    <option value="drop-in-yeovil">Drop in (Yeovil)</option>
                     <option value="home-collection">Home Collection</option>
-                    <option value="business-collection">Business Collection</option>
-                    <option value="regular-service">Regular Service</option>
-                    <option value="one-off">One-off Shredding</option>
+                    <option value="business-clearance">Business Clearance</option>
+                    <option value="regular-office-collections">Regular Office Collections</option>
+                    <option value="scanning-service">Scanning Service</option>
+                    <option value="general-enquiry">General Enquiry</option>
                   </select>
                 </div>
 
@@ -176,17 +247,41 @@ export default function ContactPage() {
                   <textarea
                     id="message"
                     name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
                     rows={4}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     placeholder="Tell us about your shredding requirements..."
                   />
                 </div>
 
+                {/* Success/Error Messages */}
+                {submitStatus === 'success' && (
+                  <div className="flex items-center gap-3 p-4 bg-green-50 border border-green-200 rounded-lg">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                    <div>
+                      <p className="text-green-800 font-medium">Enquiry sent successfully!</p>
+                      <p className="text-green-600 text-sm">We&apos;ll get back to you within 24 hours.</p>
+                    </div>
+                  </div>
+                )}
+
+                {submitStatus === 'error' && (
+                  <div className="flex items-center gap-3 p-4 bg-red-50 border border-red-200 rounded-lg">
+                    <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0" />
+                    <div>
+                      <p className="text-red-800 font-medium">Failed to send enquiry</p>
+                      <p className="text-red-600 text-sm">{errorMessage}</p>
+                    </div>
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors font-medium"
+                  disabled={isSubmitting}
+                  className="w-full bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Enquiry
+                  {isSubmitting ? 'Sending...' : 'Send Enquiry'}
                 </button>
               </form>
             </div>
