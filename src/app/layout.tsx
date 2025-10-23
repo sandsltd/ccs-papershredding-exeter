@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://papershreddingbournemouth.co.uk/images/paper-shredding-bournemouth.jpg",
+        url: "https://papershreddingbournemouth.co.uk/images/cross cut logo new square.png",
         width: 1200,
         height: 630,
         alt: "Paper Shredding Bournemouth - Professional Document Destruction",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Paper Shredding Bournemouth | Professional Document Destruction",
     description: "Professional paper shredding services in Bournemouth. BS EN 15713 compliant.",
-    images: ["https://papershreddingbournemouth.co.uk/images/paper-shredding-bournemouth.jpg"],
+    images: ["https://papershreddingbournemouth.co.uk/images/cross cut logo new square.png"],
   },
   robots: {
     index: true,

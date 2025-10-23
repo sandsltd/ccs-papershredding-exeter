@@ -75,7 +75,7 @@ export default function StructuredData() {
     "@type": "Organization",
     "name": "Cross Cut Shredding",
     "url": "https://www.crosscutshredding.co.uk",
-    "logo": "https://www.crosscutshredding.co.uk/logo.png",
+    "logo": "https://papershreddingbournemouth.co.uk/images/cross cut logo new square.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "01935 310616",
