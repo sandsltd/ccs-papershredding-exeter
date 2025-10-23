@@ -14,6 +14,7 @@ const Footer = dynamic(() => import("../components/Footer"), {
 
 import ClientComponents from "../components/ClientComponents";
 import CriticalCSS from "../components/CriticalCSS";
+import StructuredData from "../components/StructuredData";
 
 export const metadata: Metadata = {
   title: "Paper Shredding Bournemouth | Professional Document Destruction | Secure Shredding",
@@ -64,6 +65,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="" />
       </head>
       <body className="bg-white text-black">
+        <StructuredData />
         <CriticalCSS />
         <ClientComponents 
           GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}

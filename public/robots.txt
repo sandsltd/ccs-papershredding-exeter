@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://papershreddingbournemouth.co.uk/sitemap.xml
+
+# Disallow admin areas (if any)
+Disallow: /admin/
+Disallow: /api/
+
+# Allow all search engines to crawl
+Crawl-delay: 1
