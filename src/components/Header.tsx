@@ -13,7 +13,8 @@ import {
   FileText, 
   Search, 
   Info,
-  Star
+  Star,
+  Leaf
 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Logo from './Logo'
@@ -171,6 +172,20 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50">
+      {/* Service Banner Bar */}
+      <div className="bg-gradient-to-r from-green-800 to-green-700 h-10">
+        <div className="max-w-7xl mx-auto h-full">
+          <div className="flex items-center justify-start h-full px-6">
+            <div className="flex items-center gap-2">
+              <Leaf className="w-4 h-4 text-white" />
+              <span className="text-white font-semibold text-sm">
+                Document Shredding & Recycling Services in Bournemouth
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
       {/* Navigation Container */}
       <div 
         className={`transform-gpu transition-all duration-500 ease-out bg-white ${
