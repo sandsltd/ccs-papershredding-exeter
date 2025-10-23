@@ -173,12 +173,12 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50">
       {/* Service Banner Bar */}
-      <div className="bg-gradient-to-r from-green-800 to-green-700 h-10">
+      <div className="bg-gradient-to-r from-green-800 to-green-700 h-14">
         <div className="max-w-7xl mx-auto h-full">
           <div className="flex items-center justify-start h-full px-6">
             <div className="flex items-center gap-2">
               <Leaf className="w-4 h-4 text-white" />
-              <span className="text-white font-semibold text-sm">
+              <span className="text-white font-semibold text-base">
                 Document Shredding & Recycling Services in Bournemouth
               </span>
             </div>
@@ -209,7 +209,7 @@ export default function Header() {
                   <Phone className="w-4 h-4" />
                   01935 310616
                 </motion.a>
-                <div className="hidden sm:block w-px h-5 bg-white/20"></div>
+                <div className="hidden sm:block w-px h-4 bg-white/20"></div>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -304,7 +304,7 @@ export default function Header() {
             <div 
               className="flex items-center justify-between transition-all duration-500 ease-out"
               style={{
-                height: isScrolled ? '64px' : '80px'
+                height: isScrolled ? '56px' : '72px'
               }}
             >
               {/* Logo */}
