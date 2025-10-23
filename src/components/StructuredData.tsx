@@ -2,8 +2,8 @@ export default function StructuredData() {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Cross Cut Shredding - Paper Shredding Bournemouth",
-    "description": "Professional paper shredding services in Bournemouth, Poole, and Christchurch. Secure document destruction for homes and businesses. BS EN 15713 compliant.",
+    "name": "Cross Cut Shredding - Paper Shredding Exeter",
+    "description": "Professional paper shredding services in Exeter, Crediton, and Honiton. Secure document destruction for homes and businesses. BS EN 15713 compliant.",
     "url": "https://papershreddingbournemouth.co.uk",
     "telephone": "01935 310616",
     "email": "info@crosscutshredding.co.uk",
@@ -16,15 +16,15 @@ export default function StructuredData() {
     "areaServed": [
       {
         "@type": "City",
-        "name": "Bournemouth"
+        "name": "Exeter"
       },
       {
         "@type": "City", 
-        "name": "Poole"
+        "name": "Crediton"
       },
       {
         "@type": "City",
-        "name": "Christchurch"
+        "name": "Honiton"
       }
     ],
     "serviceType": "Paper Shredding Services",
@@ -87,9 +87,9 @@ export default function StructuredData() {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Paper Shredding Bournemouth",
-    "url": "https://papershreddingbournemouth.co.uk",
-    "description": "Professional paper shredding services in Bournemouth, Poole, and Christchurch",
+    "name": "Paper Shredding Exeter",
+    "url": "https://papershreddingexeter.co.uk",
+    "description": "Professional paper shredding services in Exeter, Crediton, and Honiton",
     "publisher": {
       "@type": "Organization",
       "name": "Cross Cut Shredding"
@@ -105,7 +105,7 @@ export default function StructuredData() {
         "name": "How quickly can you collect from my area?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We can usually arrange collection within 2-3 weeks of your request. We provide a 3-hour time window so you know when we're coming. We cover Bournemouth, Poole, Christchurch and surrounding Dorset areas with flexible scheduling to suit your needs."
+          "text": "We can usually arrange collection within 2-3 weeks of your request. We provide a 3-hour time window so you know when we're coming. We cover Exeter, Crediton, Honiton and surrounding Devon areas with flexible scheduling to suit your needs."
         }
       },
       {

@@ -179,7 +179,7 @@ export default function Header() {
             <div className="flex items-center gap-2">
               <Leaf className="w-4 h-4 text-white" />
               <span className="text-white font-semibold text-base">
-                Document Shredding & Recycling Services in Bournemouth
+                Document Shredding & Recycling Services in Exeter
               </span>
             </div>
           </div>

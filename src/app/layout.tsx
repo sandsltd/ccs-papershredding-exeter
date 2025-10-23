@@ -17,17 +17,17 @@ import CriticalCSS from "../components/CriticalCSS";
 import StructuredData from "../components/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Paper Shredding Bournemouth | Professional Document Destruction | Secure Shredding",
-  description: "Professional paper shredding services in Bournemouth. Secure document destruction for homes and businesses. BS EN 15713 compliant. Collection and drop-off services available. Free quotes.",
-  keywords: "paper shredding bournemouth, document destruction bournemouth, secure shredding bournemouth, confidential waste bournemouth, shredding service bournemouth, document disposal bournemouth, paper destruction bournemouth",
+  title: "Paper Shredding Exeter | Professional Document Destruction | Secure Shredding",
+  description: "Professional paper shredding services in Exeter. Secure document destruction for homes and businesses. BS EN 15713 compliant. Collection and drop-off services available. Free quotes.",
+  keywords: "paper shredding exeter, document destruction exeter, secure shredding exeter, confidential waste exeter, shredding service exeter, document disposal exeter, paper destruction exeter",
   alternates: {
-    canonical: "https://papershreddingbournemouth.co.uk",
+    canonical: "https://papershreddingexeter.co.uk",
   },
   openGraph: {
-    title: "Paper Shredding Bournemouth | Professional Document Destruction",
-    description: "Professional paper shredding services in Bournemouth. Secure document destruction for homes and businesses. BS EN 15713 compliant.",
-    url: "https://papershreddingbournemouth.co.uk",
-    siteName: "Paper Shredding Bournemouth",
+    title: "Paper Shredding Exeter | Professional Document Destruction",
+    description: "Professional paper shredding services in Exeter. Secure document destruction for homes and businesses. BS EN 15713 compliant.",
+    url: "https://papershreddingexeter.co.uk",
+    siteName: "Paper Shredding Exeter",
     locale: "en_GB",
     type: "website",
     images: [
@@ -35,15 +35,15 @@ export const metadata: Metadata = {
         url: "https://papershreddingbournemouth.co.uk/images/cross cut logo new square.png",
         width: 1200,
         height: 630,
-        alt: "Paper Shredding Bournemouth - Professional Document Destruction",
+        alt: "Paper Shredding Exeter - Professional Document Destruction",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Paper Shredding Bournemouth | Professional Document Destruction",
-    description: "Professional paper shredding services in Bournemouth. BS EN 15713 compliant.",
-    images: ["https://papershreddingbournemouth.co.uk/images/cross cut logo new square.png"],
+    title: "Paper Shredding Exeter | Professional Document Destruction",
+    description: "Professional paper shredding services in Exeter. BS EN 15713 compliant.",
+    images: ["https://papershreddingexeter.co.uk/images/cross cut logo new square.png"],
   },
   robots: {
     index: true,

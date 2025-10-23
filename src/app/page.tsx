@@ -58,15 +58,15 @@ export default function HomePage() {
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
                 Paper Shredding<br />
-                <span className="text-green-400">Bournemouth</span><br />
+                <span className="text-green-400">Exeter</span><br />
                 <span className="text-3xl sm:text-4xl lg:text-5xl">Professional</span><br />
                 <span className="text-3xl sm:text-4xl lg:text-5xl">Document</span><br />
                 <span className="text-3xl sm:text-4xl lg:text-5xl">Destruction</span>
               </h1>
               
               <p className="text-lg text-gray-200 mb-8 leading-relaxed max-w-lg">
-                Professional shredding Bournemouth - document destruction for homes and businesses across Bournemouth. 
-                Serving Bournemouth, Poole, Christchurch and surrounding areas with secure shredding services.
+                Professional shredding Exeter - document destruction for homes and businesses across Exeter. 
+                Serving Exeter, Crediton, Honiton and surrounding Devon areas with secure shredding services.
               </p>
 
               {/* Contact Info */}
@@ -147,11 +147,11 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Paper Shredding Services for Bournemouth
+              Paper Shredding Services for Exeter
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Professional document destruction services for homes and businesses across Bournemouth, 
-              Poole, Christchurch, and surrounding Dorset areas.
+              Professional document destruction services for homes and businesses across Exeter, 
+              Crediton, Honiton, and surrounding Devon areas.
             </p>
           </motion.div>
 
@@ -170,7 +170,7 @@ export default function HomePage() {
                     Professional Collection Service
                   </h3>
                   <p className="text-lg text-gray-600 mb-6">
-                    Our dedicated collection vehicles serve Bournemouth, Poole, and Christchurch with secure document destruction. 
+                    Our dedicated collection vehicles serve Exeter, Crediton, and Honiton with secure document destruction. 
                     Professional drivers ensure your confidential documents are handled safely from collection to destruction.
                   </p>
                   <div className="space-y-3">
@@ -221,7 +221,7 @@ export default function HomePage() {
               </div>
               
               <p className="text-gray-600 mb-6">
-                Secure document destruction for Bournemouth residents. Collection from your home 
+                Secure document destruction for Exeter residents. Collection from your home 
                 or drop-off at our secure facility.
               </p>
 
@@ -264,7 +264,7 @@ export default function HomePage() {
               </div>
               
               <p className="text-gray-600 mb-6">
-                Professional document destruction for Bournemouth businesses. Regular collections 
+                Professional document destruction for Exeter businesses. Regular collections 
                 and secure console placement available.
               </p>
 
@@ -305,10 +305,10 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose Our Bournemouth Paper Shredding Service?
+              Why Choose Our Exeter Paper Shredding Service?
             </h2>
             <p className="text-xl text-gray-600">
-              Trusted by hundreds of homes and businesses across Bournemouth, Poole, and Christchurch
+              Trusted by hundreds of homes and businesses across Exeter, Crediton, and Honiton
             </p>
           </motion.div>
 
@@ -327,7 +327,7 @@ export default function HomePage() {
               {
                 icon: <MapPin className="w-8 h-8" />,
                 title: 'Dedicated Service Area',
-                description: 'Specialised collection service for Bournemouth, Poole, Christchurch and surrounding Dorset areas.'
+                description: 'Specialised collection service for Exeter, Crediton, Honiton and surrounding Devon areas.'
               }
             ].map((feature, index) => (
               <motion.div
@@ -369,15 +369,15 @@ export default function HomePage() {
               Areas We Serve
             </h2>
             <p className="text-xl text-gray-600">
-              Professional paper shredding across Bournemouth and surrounding areas
+              Professional paper shredding across Exeter and surrounding areas
             </p>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             {[
-              'Bournemouth', 'Christchurch', 'Poole', 'Ferndown',
-              'Wimborne', 'Ringwood', 'New Milton', 'Wareham',
-              'Verwood', 'West Moors', 'Corfe Mullen', 'Swanage'
+              'Exeter', 'Crediton', 'Honiton', 'Exmouth',
+              'Dawlish', 'Teignmouth', 'Newton Abbot', 'Tiverton',
+              'Cullompton', 'Sidmouth', 'Budleigh Salterton', 'Ottery St Mary'
             ].map((area, index) => (
               <motion.div
                 key={index}
@@ -725,7 +725,7 @@ export default function HomePage() {
                     How quickly can you collect from my area?
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
-                    We can usually arrange collection within <span className="font-semibold text-green-600">2-3 weeks</span> of your request. We provide a 3-hour time window so you know when we&apos;re coming. We cover Bournemouth, Poole, Christchurch and surrounding Dorset areas with flexible scheduling to suit your needs.
+                    We can usually arrange collection within <span className="font-semibold text-green-600">2-3 weeks</span> of your request. We provide a 3-hour time window so you know when we&apos;re coming. We cover Exeter, Crediton, Honiton and surrounding Devon areas with flexible scheduling to suit your needs.
                   </p>
                 </div>
               </div>
@@ -816,7 +816,7 @@ export default function HomePage() {
               Ready to Securely Destroy Your Documents?
             </h2>
             <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
-              Get a free quote for professional paper shredding services in Bournemouth. 
+              Get a free quote for professional paper shredding services in Exeter. 
               Same-day collections available.
             </p>
             

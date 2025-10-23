@@ -71,7 +71,7 @@ export default function ContactPage() {
               Contact Us
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Get in touch for secure paper shredding services in Bournemouth. 
+              Get in touch for secure paper shredding services in Exeter. 
               Free quotes and same-day collections available.
             </p>
           </div>
@@ -126,8 +126,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">Service Area</h3>
                     <p className="text-gray-600">
-                      Bournemouth, Christchurch, Poole<br />
-                      and surrounding Dorset areas
+                      Exeter, Crediton, Honiton<br />
+                      and surrounding Devon areas
                     </p>
                   </div>
                 </div>
@@ -214,7 +214,7 @@ export default function ContactPage() {
                     onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                    placeholder="BH1 1AA"
+                      placeholder="EX1 1AA"
                   />
                 </div>
 

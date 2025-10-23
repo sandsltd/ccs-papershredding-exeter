@@ -2,19 +2,19 @@ import { MapPin, CheckCircle } from 'lucide-react'
 
 export default function AreasServedPage() {
   const mainAreas = [
-    'Bournemouth',
-    'Christchurch', 
-    'Poole',
-    'Ferndown'
+    'Exeter',
+    'Crediton', 
+    'Honiton',
+    'Exmouth'
   ]
 
   const allAreas = [
-    'Bournemouth', 'Christchurch', 'Poole', 'Ferndown',
-    'Wimborne', 'Ringwood', 'New Milton', 'Wareham',
-    'Verwood', 'West Moors', 'Corfe Mullen', 'Swanage',
-    'Dorchester', 'Blandford Forum', 'Shaftesbury', 'Gillingham',
-    'Bridport', 'Lyme Regis', 'Weymouth', 'Portland',
-    'Sturminster Newton', 'Sherborne', 'Beaminster', 'Lytchett Matravers'
+    'Exeter', 'Crediton', 'Honiton', 'Exmouth',
+    'Dawlish', 'Teignmouth', 'Newton Abbot', 'Tiverton',
+    'Cullompton', 'Sidmouth', 'Budleigh Salterton', 'Ottery St Mary',
+    'Topsham', 'Starcross', 'Kenton', 'Pinhoe',
+    'Broadclyst', 'Clyst St Mary', 'Woodbury', 'Lympstone',
+    'Colyton', 'Seaton', 'Axminster', 'Chard'
   ]
 
   return (
@@ -27,7 +27,7 @@ export default function AreasServedPage() {
               Areas We Serve
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Professional paper shredding services across Bournemouth, Dorset and surrounding areas. 
+              Professional paper shredding services across Exeter, Devon and surrounding areas. 
               Same-day collections available in most locations.
             </p>
           </div>
@@ -93,7 +93,7 @@ export default function AreasServedPage() {
               All Service Locations
             </h2>
             <p className="text-lg text-gray-600">
-              We provide paper shredding services to the following areas across Dorset
+              We provide paper shredding services to the following areas across Devon
             </p>
           </div>
 

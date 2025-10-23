@@ -1,12 +1,12 @@
-# Paper Shredding Bournemouth
+# Paper Shredding Exeter
 
-A focused, local paper shredding website targeting the Bournemouth area using the generic domain name strategy.
+A focused, local paper shredding website targeting the Exeter area using the generic domain name strategy.
 
 ## 🎯 Strategy
 
 This website implements the generic domain name SEO strategy with:
-- **Exact-match domain**: `papershreddingbournemouth.co.uk`
-- **Local focus**: Specifically targeting Bournemouth and surrounding areas
+- **Exact-match domain**: `papershreddingexeter.co.uk`
+- **Local focus**: Specifically targeting Exeter and surrounding areas
 - **Service-specific content**: Concentrated on paper shredding services
 - **Same design language**: Consistent with the main CCS website
 
@@ -20,7 +20,7 @@ This website implements the generic domain name SEO strategy with:
 
 1. Clone or navigate to this project:
 ```bash
-cd papershreddingbournemouth
+cd papershreddingexeter
 ```
 
 2. Install dependencies:
@@ -70,7 +70,7 @@ src/
 
 ## 🎨 Design Principles
 
-- **Bournemouth-focused**: All content specifically mentions Bournemouth
+- **Exeter-focused**: All content specifically mentions Exeter
 - **Clean & Professional**: Trust-building design for security services
 - **Mobile-first**: Responsive design optimized for all devices
 - **Fast Loading**: Optimized for Core Web Vitals and SEO
@@ -79,7 +79,7 @@ src/
 ## 📈 SEO Strategy
 
 ### On-Page SEO
-- Title tags optimized for "paper shredding bournemouth"
+- Title tags optimized for "paper shredding exeter"
 - Meta descriptions with local keywords
 - H1 tags targeting primary keywords
 - Internal linking structure
@@ -163,4 +163,4 @@ For technical support or questions about this implementation, contact the develo
 
 ---
 
-Built with ♥ for Paper Shredding Bournemouth
+Built with ♥ for Paper Shredding Exeter

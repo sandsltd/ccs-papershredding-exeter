@@ -105,7 +105,7 @@ export default function QuoteModal({ isOpen, onCloseAction }: QuoteModalProps) {
             <div className="flex items-center justify-between p-6 border-b border-gray-200">
               <div>
                 <h2 className="text-2xl font-bold text-gray-900">Get Your Free Quote</h2>
-                <p className="text-gray-600 mt-1">Professional paper shredding services in Bournemouth</p>
+                <p className="text-gray-600 mt-1">Professional paper shredding services in Exeter</p>
               </div>
               <button
                 onClick={onCloseAction}
