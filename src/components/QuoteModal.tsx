@@ -279,7 +279,7 @@ export default function QuoteModal({ isOpen, onCloseAction }: QuoteModalProps) {
                   <div className="w-5 h-5 text-green-600">✓</div>
                   <div>
                     <p className="text-green-800 font-medium">Quote request sent successfully!</p>
-                    <p className="text-green-600 text-sm">We'll get back to you within 24 hours.</p>
+                    <p className="text-green-600 text-sm">We&apos;ll get back to you within 24 hours.</p>
                   </div>
                 </div>
               )}
