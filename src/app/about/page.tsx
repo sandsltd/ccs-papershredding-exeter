@@ -6,11 +6,11 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-              About Paper Shredding Bournemouth
+              About Our Bournemouth Paper Shredding Service
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Your trusted local paper shredding service, providing secure document destruction 
-              for homes and businesses across Bournemouth and surrounding areas.
+              Your trusted paper shredding service for Bournemouth, Poole, and Christchurch. 
+              We provide secure document destruction for homes and businesses across Dorset.
             </p>
           </div>
         </div>
@@ -22,9 +22,9 @@ export default function AboutPage() {
           <div className="prose prose-lg mx-auto">
             <h2>Professional Document Destruction Services</h2>
             <p>
-              Paper Shredding Bournemouth is your local specialist for secure document destruction services. 
               We provide professional paper shredding solutions for both residential and commercial clients 
-              throughout Bournemouth, Christchurch, Poole, and the surrounding Dorset area.
+              throughout Bournemouth, Poole, Christchurch, and the surrounding Dorset area. Our specialised 
+              collection service ensures secure document destruction for customers across these locations.
             </p>
 
             <h3>Our Mission</h3>
@@ -37,7 +37,7 @@ export default function AboutPage() {
 
             <h3>Why Choose Us?</h3>
             <ul>
-              <li><strong>Local Service:</strong> Based in the Bournemouth area, we understand local needs</li>
+              <li><strong>Dedicated Service Area:</strong> Specialised collection service for Bournemouth, Poole, and Christchurch</li>
               <li><strong>Fully Compliant:</strong> All services meet BS EN 15713 standards</li>
               <li><strong>Flexible Collections:</strong> Same-day and scheduled services available</li>
               <li><strong>Certificate of Destruction:</strong> Provided for all shredding services</li>
@@ -53,10 +53,10 @@ export default function AboutPage() {
               solution that meets your needs.
             </p>
 
-            <h3>Areas We Serve</h3>
+            <h3>Our Service Areas</h3>
             <p>
-              Our paper shredding services are available throughout Bournemouth and the surrounding areas 
-              including Christchurch, Poole, Ferndown, Wimborne, Ringwood, and many other locations across Dorset.
+              Our specialised collection service covers Bournemouth, Poole, Christchurch, and surrounding areas 
+              including Ferndown, Wimborne, Ringwood, and many other locations across Dorset.
             </p>
           </div>
         </div>

@@ -19,12 +19,59 @@ export default function QuoteModal({ isOpen, onCloseAction }: QuoteModalProps) {
     frequency: '',
     message: ''
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log('Form submitted:', formData)
-    onCloseAction()
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+    setErrorMessage('')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          postcode: formData.postcode,
+          service: formData.serviceType,
+          message: `Service Type: ${formData.serviceType}\nFrequency: ${formData.frequency}\nAdditional Details: ${formData.message}`
+        }),
+      })
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          postcode: '',
+          serviceType: '',
+          frequency: '',
+          message: ''
+        })
+        // Close modal after a short delay
+        setTimeout(() => {
+          onCloseAction()
+        }, 2000)
+      } else {
+        const errorData = await response.json()
+        setSubmitStatus('error')
+        setErrorMessage(errorData.error || 'Failed to send quote request')
+      }
+    } catch (error) {
+      setSubmitStatus('error')
+      setErrorMessage('Network error. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -70,18 +117,34 @@ export default function QuoteModal({ isOpen, onCloseAction }: QuoteModalProps) {
 
             {/* Contact Info */}
             <div className="p-6 bg-green-50 border-b border-gray-200">
-              <div className="flex flex-col sm:flex-row gap-4">
-                <div className="flex items-center gap-2">
-                  <Phone className="w-5 h-5 text-green-600" />
-                  <span className="text-sm font-medium text-gray-900">01935 310616</span>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-5 h-5 text-green-600" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-gray-900">Call Us</p>
+                    <p className="text-sm text-gray-600">01935 310616</p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Mail className="w-5 h-5 text-green-600" />
-                  <span className="text-sm font-medium text-gray-900">info@papershreddingbournemouth.co.uk</span>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-5 h-5 text-green-600" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-sm font-medium text-gray-900">Email Us</p>
+                    <p className="text-sm text-gray-600 break-all">info@crosscutshredding.co.uk</p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="w-5 h-5 text-green-600" />
-                  <span className="text-sm font-medium text-gray-900">Mon-Fri 8AM-6PM</span>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Clock className="w-5 h-5 text-green-600" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-gray-900">Opening Hours</p>
+                    <p className="text-sm text-gray-600">Mon-Fri 9AM-5PM</p>
+                    <p className="text-xs text-gray-500">(excluding bank holidays)</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -165,10 +228,13 @@ export default function QuoteModal({ isOpen, onCloseAction }: QuoteModalProps) {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   >
                     <option value="">Select service</option>
-                    <option value="home-collection">Home Collection</option>
-                    <option value="business-collection">Business Collection</option>
-                    <option value="regular-service">Regular Service</option>
-                    <option value="one-off">One-off Shredding</option>
+                    <option value="drop-in-yeovil">Drop In (Yeovil)</option>
+                    <option value="home-shredding">Home Shredding</option>
+                    <option value="business-clearance">Business Clearance</option>
+                    <option value="regular-shredding">Regular Shredding</option>
+                    <option value="media-destruction">Media Destruction</option>
+                    <option value="scanning-services">Scanning Services</option>
+                    <option value="other">Other</option>
                   </select>
                 </div>
 
@@ -184,11 +250,10 @@ export default function QuoteModal({ isOpen, onCloseAction }: QuoteModalProps) {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   >
                     <option value="">Select frequency</option>
-                    <option value="weekly">Weekly</option>
-                    <option value="fortnightly">Fortnightly</option>
-                    <option value="monthly">Monthly</option>
-                    <option value="quarterly">Quarterly</option>
-                    <option value="one-off">One-off</option>
+                    <option value="clearance">Clearance</option>
+                    <option value="2-weekly">2 Weekly</option>
+                    <option value="4-weekly">4 Weekly</option>
+                    <option value="8-weekly">8 Weekly</option>
                   </select>
                 </div>
               </div>
@@ -208,6 +273,27 @@ export default function QuoteModal({ isOpen, onCloseAction }: QuoteModalProps) {
                 />
               </div>
 
+              {/* Success/Error Messages */}
+              {submitStatus === 'success' && (
+                <div className="flex items-center gap-3 p-4 bg-green-50 border border-green-200 rounded-lg">
+                  <div className="w-5 h-5 text-green-600">✓</div>
+                  <div>
+                    <p className="text-green-800 font-medium">Quote request sent successfully!</p>
+                    <p className="text-green-600 text-sm">We'll get back to you within 24 hours.</p>
+                  </div>
+                </div>
+              )}
+
+              {submitStatus === 'error' && (
+                <div className="flex items-center gap-3 p-4 bg-red-50 border border-red-200 rounded-lg">
+                  <div className="w-5 h-5 text-red-600">✗</div>
+                  <div>
+                    <p className="text-red-800 font-medium">Failed to send quote request</p>
+                    <p className="text-red-600 text-sm">{errorMessage}</p>
+                  </div>
+                </div>
+              )}
+
               {/* Submit Button */}
               <div className="flex gap-4">
                 <button
@@ -219,9 +305,10 @@ export default function QuoteModal({ isOpen, onCloseAction }: QuoteModalProps) {
                 </button>
                 <button
                   type="submit"
-                  className="flex-1 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium"
+                  disabled={isSubmitting}
+                  className="flex-1 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Get Free Quote
+                  {isSubmitting ? 'Sending...' : 'Get Free Quote'}
                 </button>
               </div>
             </form>

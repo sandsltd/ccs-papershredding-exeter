@@ -37,17 +37,21 @@ export async function POST(request: NextRequest) {
 
     // Email content
     const emailContent = `
-New enquiry from Paper Shredding Bournemouth website:
+📧 NEW ENQUIRY - Paper Shredding Bournemouth
 
+👤 CUSTOMER DETAILS:
 Name: ${name}
 Email: ${email}
 Phone: ${phone || 'Not provided'}
 Postcode: ${postcode}
-Service Required: ${service}
-Message: ${message || 'No additional message'}
+
+🛠️ SERVICE REQUEST:
+Service: ${service}
+${message ? `\n📝 ADDITIONAL DETAILS:\n${message}` : ''}
 
 ---
-This enquiry was submitted via the Paper Shredding Bournemouth contact form.
+📅 Submitted: ${new Date().toLocaleString('en-GB')}
+🌐 Source: Paper Shredding Bournemouth Website
     `.trim()
 
     // Send email

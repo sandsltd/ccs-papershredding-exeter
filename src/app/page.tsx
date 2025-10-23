@@ -1,7 +1,9 @@
 "use client"
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import QuoteModal from '../components/QuoteModal'
 import { 
   Phone, 
   MapPin, 
@@ -19,6 +21,8 @@ import {
 } from 'lucide-react'
 
 export default function HomePage() {
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false)
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -38,8 +42,8 @@ export default function HomePage() {
               </h1>
               
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Professional document destruction services in Bournemouth and surrounding areas. 
-                Secure, reliable, and BS EN 15713 compliant shredding for homes and businesses.
+                Professional document destruction services for Bournemouth, Poole, and Christchurch. 
+                Secure, reliable, and BS EN 15713 compliant shredding for homes and businesses across Dorset.
               </p>
 
               {/* Key Features */}
@@ -54,13 +58,14 @@ export default function HomePage() {
                 </div>
                 <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full">
                   <Star className="w-5 h-5 text-yellow-500 fill-current" />
-                  <span className="text-sm font-medium text-gray-700">4.9/5 Rating</span>
+                  <span className="text-sm font-medium text-gray-700">5.0/5 Rating</span>
                 </div>
               </div>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <motion.button
+                  onClick={() => setIsQuoteModalOpen(true)}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="bg-green-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-green-700 transition-colors shadow-lg"
@@ -134,11 +139,11 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Paper Shredding Services in Bournemouth
+              Paper Shredding Services for Bournemouth
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Professional document destruction services for homes and businesses across Bournemouth, 
-              Christchurch, Poole, and surrounding areas.
+              Poole, Christchurch, and surrounding Dorset areas.
             </p>
           </motion.div>
 
@@ -243,10 +248,10 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose Paper Shredding Bournemouth?
+              Why Choose Our Bournemouth Paper Shredding Service?
             </h2>
             <p className="text-xl text-gray-600">
-              Trusted by hundreds of homes and businesses across Bournemouth
+              Trusted by hundreds of homes and businesses across Bournemouth, Poole, and Christchurch
             </p>
           </motion.div>
 
@@ -264,8 +269,8 @@ export default function HomePage() {
               },
               {
                 icon: <MapPin className="w-8 h-8" />,
-                title: 'Local Service',
-                description: 'Based in the area, serving Bournemouth, Christchurch, Poole and surrounding areas.'
+                title: 'Dedicated Service Area',
+                description: 'Specialised collection service for Bournemouth, Poole, Christchurch and surrounding Dorset areas.'
               }
             ].map((feature, index) => (
               <motion.div
@@ -366,6 +371,7 @@ export default function HomePage() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
+                onClick={() => setIsQuoteModalOpen(true)}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="bg-white text-green-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-50 transition-colors shadow-lg"
@@ -385,6 +391,9 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Quote Modal */}
+      <QuoteModal isOpen={isQuoteModalOpen} onCloseAction={() => setIsQuoteModalOpen(false)} />
     </div>
   )
 }

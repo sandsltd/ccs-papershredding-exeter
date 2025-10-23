@@ -111,12 +111,12 @@ export default function Footer() {
                 &copy; {new Date().getFullYear()} Cross Cut Shredding Ltd. All Rights Reserved.
               </p>
               <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
-                <Link href="/legal/privacy-policy" className="text-sm text-gray-600 hover:text-green-600 transition-colors">
+                <a href="https://www.crosscutshredding.co.uk/legal/privacy-policy" className="text-sm text-gray-600 hover:text-green-600 transition-colors">
                   Privacy Policy
-                </Link>
-                <Link href="/legal/terms" className="text-sm text-gray-600 hover:text-green-600 transition-colors">
+                </a>
+                <a href="https://www.crosscutshredding.co.uk/legal/terms" className="text-sm text-gray-600 hover:text-green-600 transition-colors">
                   Terms & Conditions
-                </Link>
+                </a>
               </div>
             </div>
             <div className="text-xs text-gray-500 text-center md:text-left">

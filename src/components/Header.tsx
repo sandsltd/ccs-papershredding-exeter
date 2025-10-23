@@ -12,7 +12,8 @@ import {
   Users2, 
   FileText, 
   Search, 
-  Info 
+  Info,
+  Star
 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Logo from './Logo'
@@ -212,6 +213,24 @@ export default function Header() {
                 </motion.div>
               </div>
 
+              {/* Center - Star Reviews */}
+              <div className="hidden md:flex items-center">
+                <motion.a
+                  href="https://www.crosscutshredding.co.uk/reviews"
+                  className="flex items-center gap-2 text-white/90 hover:text-white transition-colors group"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <div className="flex items-center gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <span className="text-sm font-medium">5.0</span>
+                  <span className="text-xs text-white/80">(127+ reviews)</span>
+                </motion.a>
+              </div>
+
               {/* Right Side - Links */}
               <div className="flex items-center h-full gap-8">
                 <motion.div
@@ -253,8 +272,6 @@ export default function Header() {
                 >
                   <a
                     href="https://portal.crosscutshredding.paperroute.co.uk"
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
                   >
                     <span className="hidden sm:inline">Customer Portal</span>
