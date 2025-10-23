@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://papershreddingbournemouth.co.uk/images/cross cut logo new square.png",
+        url: "https://papershreddingexeter.co.uk/images/cross cut logo new square.png",
         width: 1200,
         height: 630,
         alt: "Paper Shredding Exeter - Professional Document Destruction",

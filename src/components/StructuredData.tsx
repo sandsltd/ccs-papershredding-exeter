@@ -4,13 +4,13 @@ export default function StructuredData() {
     "@type": "LocalBusiness",
     "name": "Cross Cut Shredding - Paper Shredding Exeter",
     "description": "Professional paper shredding services in Exeter, Crediton, and Honiton. Secure document destruction for homes and businesses. BS EN 15713 compliant.",
-    "url": "https://papershreddingbournemouth.co.uk",
+    "url": "https://papershreddingexeter.co.uk",
     "telephone": "01935 310616",
     "email": "info@crosscutshredding.co.uk",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Yeovil",
-      "addressRegion": "Somerset",
+      "addressLocality": "Exeter",
+      "addressRegion": "Devon",
       "addressCountry": "GB"
     },
     "areaServed": [
@@ -75,7 +75,7 @@ export default function StructuredData() {
     "@type": "Organization",
     "name": "Cross Cut Shredding",
     "url": "https://www.crosscutshredding.co.uk",
-    "logo": "https://papershreddingbournemouth.co.uk/images/cross cut logo new square.png",
+    "logo": "https://papershreddingexeter.co.uk/images/cross cut logo new square.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "01935 310616",
