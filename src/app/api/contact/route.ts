@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
-import * as postmark from 'postmark'
+import { Resend } from 'resend'
 
-const client = new postmark.ServerClient(process.env.POSTMARK_API_TOKEN!)
+const resend = new Resend(process.env.RESEND_API_KEY!)
 
 export async function POST(request: NextRequest) {
   try {
@@ -35,14 +35,14 @@ ${message ? `\n📝 ADDITIONAL DETAILS:\n${message}` : ''}
 🌐 Source: Paper Shredding Exeter Website
     `.trim()
 
-    // Send email via Postmark
-    await client.sendEmail({
-      From: process.env.EMAIL_FROM!,
-      To: process.env.EMAIL_TO!,
-      Subject: `New Enquiry - ${service} - ${postcode}`,
-      TextBody: emailContent,
-      HtmlBody: emailContent.replace(/\n/g, '<br>'),
-      ReplyTo: email,
+    // Send email via Resend
+    await resend.emails.send({
+      from: 'web@saunders-simmons.co.uk',
+      to: process.env.EMAIL_TO!,
+      subject: `New Enquiry - ${service} - ${postcode}`,
+      text: emailContent,
+      html: emailContent.replace(/\n/g, '<br>'),
+      replyTo: email,
     })
 
     return NextResponse.json(
