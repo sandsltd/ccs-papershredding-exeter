@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
-import nodemailer from 'nodemailer'
+import * as postmark from 'postmark'
+
+const client = new postmark.ServerClient(process.env.POSTMARK_API_TOKEN!)
 
 export async function POST(request: NextRequest) {
   try {
@@ -14,30 +16,9 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Debug environment variables
-    console.log('Email config check:', {
-      host: process.env.EMAIL_HOST,
-      port: process.env.EMAIL_PORT,
-      user: process.env.EMAIL_USER,
-      hasPass: !!process.env.EMAIL_PASS,
-      from: process.env.EMAIL_FROM,
-      to: process.env.EMAIL_TO
-    })
-
-    // Create transporter using environment variables
-    const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST,
-      port: parseInt(process.env.EMAIL_PORT || '465'),
-      secure: true, // true for 465, false for other ports
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    })
-
     // Email content
     const emailContent = `
-📧 NEW ENQUIRY - Paper Shredding Bournemouth
+📧 NEW ENQUIRY - Paper Shredding Exeter
 
 👤 CUSTOMER DETAILS:
 Name: ${name}
@@ -51,16 +32,17 @@ ${message ? `\n📝 ADDITIONAL DETAILS:\n${message}` : ''}
 
 ---
 📅 Submitted: ${new Date().toLocaleString('en-GB')}
-🌐 Source: Paper Shredding Bournemouth Website
+🌐 Source: Paper Shredding Exeter Website
     `.trim()
 
-    // Send email
-    await transporter.sendMail({
-      from: process.env.EMAIL_FROM,
-      to: process.env.EMAIL_TO,
-      subject: `New Enquiry - ${service} - ${postcode}`,
-      text: emailContent,
-      html: emailContent.replace(/\n/g, '<br>'),
+    // Send email via Postmark
+    await client.sendEmail({
+      From: process.env.EMAIL_FROM!,
+      To: process.env.EMAIL_TO!,
+      Subject: `New Enquiry - ${service} - ${postcode}`,
+      TextBody: emailContent,
+      HtmlBody: emailContent.replace(/\n/g, '<br>'),
+      ReplyTo: email,
     })
 
     return NextResponse.json(
